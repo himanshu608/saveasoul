@@ -1,14 +1,10 @@
 import { tabsData } from '@/constants/tabsData';
-import { useAuth } from '@/contexts/authContext';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Redirect, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 import React from 'react';
 
 const TabsLayout = () => {
-    const {isLoggedIn} = useAuth();
-    if(!isLoggedIn) {
-        return <Redirect href="/signup"/>
-    }     
+
     return (
         <Tabs>
             {
@@ -27,7 +23,7 @@ const TabsLayout = () => {
                 ))
             }
         </Tabs>
-    )
+    );
 }
 
 export default TabsLayout;

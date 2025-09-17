@@ -1,5 +1,6 @@
 import { useRouter } from "expo-router";
 import { createContext, PropsWithChildren, useContext, useState } from "react";
+import { useLocation } from "./locationContext";
 
 type AuthState = {
     isLoggedIn: boolean;
@@ -19,12 +20,12 @@ export const AuthProvider = ({children}: PropsWithChildren) => {
 
     const logIn = () => {
         setIsLoggedIn(true);
-        router.replace('/(tabs)/gethelp');
+        router.replace('/');
     }
 
     const logOut = () => {
         setIsLoggedIn(false);
-        router.replace('/signup');
+        router.replace('/');
     }
 
     return (
